@@ -1,8 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const Employe = () => {
   const { register, handleSubmit, reset } = useForm();
+  const navigate = useNavigate();
 
   const createuser = async (data) => {
     const saveUser = await fetch("http://localhost:3000/api/v1/createuser", {
@@ -18,6 +20,13 @@ const Employe = () => {
 
   return (
     <div className="w-full bg-[#272727]">
+      <h1 className="w-[20%] font-semibold text-xl text-zinc-400">
+        <i
+          onClick={() => navigate(-1)}
+          className="ri-arrow-go-back-fill hover:text-[#6556CD] mr-2"
+        ></i>{" "}
+        Back to Employees list
+      </h1>
       <h1 className="text-4xl font-bold text-center">
         Empower your business with our Employees creation
       </h1>

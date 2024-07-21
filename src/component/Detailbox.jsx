@@ -10,7 +10,10 @@ const Detailbox = ({ employee }) => {
       </div>
 
       {employee.map((item, index) => (
-        <div className="employedetal w-full h-[10vh] bg-[#172F3C] rounded-lg text-zinc-100 px-10 flex items-center justify-between ">
+        <div
+          key={index}
+          className="employedetal w-full h-[10vh] bg-[#172F3C] rounded-lg text-zinc-100 px-10 flex items-center justify-between "
+        >
           <div className="  ">
             <h3 className="text-lg">{item.name}</h3>
             <h5 className="text-sm">{item.email}</h5>
